@@ -1,0 +1,12 @@
+{
+  "name": "ld37",
+  "description": "ludum dare 37 entry",
+  "version": "0.0.1",
+  "author": {
+    "name": "eparadis"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4"
+  }
+}
