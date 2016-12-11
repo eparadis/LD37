@@ -1,7 +1,15 @@
+import {RoomView} from './RoomView';
+import {Room} from './Room';
+
 export class DoorGame {
 
+    private view : RoomView;
+
+    constructor( view : RoomView ) {
+        this.view = view;
+    }
+
     Run() : void {
-        const el = document.getElementById("hw");
-        el.innerText="hello world!";
+        this.view.Draw(new Room());
     }
 }

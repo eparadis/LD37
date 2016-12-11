@@ -1,0 +1,44 @@
+:root {
+    --roomBkgd: #e6dc8a;
+}
+
+
+div#playerParent {
+    background-color: var(--roomBkgd);
+}
+
+div.playerCell {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+}
+
+div#doorParent {
+    background-color: var(--roomBkgd);
+}
+
+div#doorParent > button { 
+    background-color: #8AE6E6;
+    width: 100px;
+    color: black;
+
+    border: none;
+    border-radius: 8px;
+    margin-left: 1px;
+    margin-right: 1px;
+    
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+div#doorParent > button:active {
+    background-color: #AA8AE6;
+}
+
+div#doorParent > button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
