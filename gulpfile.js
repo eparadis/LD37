@@ -24,4 +24,11 @@ gulp.task('test', function() {
     }));
 });
 
-
+gulp.task('watch:local', function(){
+  return gulp.watch( ['public/**/*', 'build/app.js'], [ 'local']);
+});
+  
+gulp.task('local', function(){
+  return gulp.src(  ['public/**/*', 'build/app.js'])
+      .pipe(gulp.dest('local'));
+});

@@ -15,3 +15,6 @@ build
 # a manager, i'm leaving them out
 typings
 
+# a copy of what would be deployed so i 
+# can refresh my browser
+local
