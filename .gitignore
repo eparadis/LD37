@@ -7,3 +7,11 @@ node_modules/
 # don't commit the pre-publish temp dir
 .publish
 
+# build output
+build
+
+# i'm not sure we should ignore typings,
+# but since you can pull them down from
+# a manager, i'm leaving them out
+typings
+
