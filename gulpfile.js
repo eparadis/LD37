@@ -15,6 +15,10 @@ gulp.task('build', function(){
     .pipe(tsProject());
 });
 
+gulp.task('watch:test', function(){
+  return gulp.watch( ['src/**/*.ts', 'tests/**/*.ts'], [ 'test']);
+});
+
 gulp.task('test', function() {
   return gulp.src( ['tests/**/*.ts'], { base: '.' })
     .pipe(ts({ "module": "commonjs"} ))
