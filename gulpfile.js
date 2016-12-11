@@ -9,11 +9,16 @@ gulp.task('deploy', function() {
 });
 
 var tsProject = ts.createProject('./tsconfig.json');
-gulp.task('test', function() {
-  gulp.src( ['tests/**/*.ts'], { base: '.' })
+
+gulp.task('build', function(){
+  return tsProject.src()
     .pipe(tsProject());
-    
-  return gulp.src( [ 'tests/**/*.js'] )
+});
+
+gulp.task('test', function() {
+  return gulp.src( ['tests/**/*.ts'], { base: '.' })
+    .pipe(ts({ "module": "commonjs"} ))
+    .pipe(gulp.dest('.'))
     .pipe(mocha({
         reporter: 'progress'
     }));
