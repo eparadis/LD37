@@ -13,29 +13,32 @@ export class HTMLRoom implements RoomView {
 
     Draw(room: Room): void {
         const isOpenable = room.doorOpenable;
-        const playerPosition = room.playerPosition;
 
         const numDoors = isOpenable.length;
 
         // draw player position
-        const playerParent = document.createElement('div');
-        this.parent.appendChild(playerParent);
-        playerParent.id = 'playerParent';
-
-        for (var i = 0; i < numDoors; i += 1) {
-            const playerCell = document.createElement('div');
-            playerCell.className = "playerCell";
-            if (i == playerPosition) {
-                playerCell.innerText = "P";
-            }
-            playerParent.appendChild(playerCell);
-        }
+        this.drawPlayer(room)
 
         // draw doors
         const doorParent = document.createElement('div');
         this.parent.appendChild(doorParent);
         doorParent.id = 'doorParent';
 
-        room.addDoors( doorParent, isOpenable);
+        room.addDoors(doorParent, isOpenable);
+    }
+
+    private drawPlayer(room: Room) {
+        const playerParent = document.createElement('div');
+        this.parent.appendChild(playerParent);
+        playerParent.id = 'playerParent';
+
+        for (var i = 0; i < room.doorOpenable.length; i += 1) {
+            const playerCell = document.createElement('div');
+            playerCell.className = "playerCell";
+            if (room.playerIsIn(i)) {
+                playerCell.innerText = "P";
+            }
+            playerParent.appendChild(playerCell);
+        }
     }
 }
